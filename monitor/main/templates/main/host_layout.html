@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% block machine %}
+    <div class="row justify-content-center">
+        <div class="col-12 mt-5" style="text-align: center;">
+            <h2 class="welcome_page_h2"> Сервер: {{ server_name }}</h2>
+        </div>
+        <div class="col-12" style="text-align: center;">
+            <h2 class="welcome_page_h2">Статистика процессорного времени</h2>
+            <img class="hostLogsImg" src="/static/main/{{ server_name }}_main.png">
+        </div>
+        <div class="col-12" style="text-align: center;">
+            <h2 class="welcome_page_h2">Метод главных компонент</h2>
+            <img class="hostLogsImg" src="/static/main/{{ server_name }}_pca.png">
+        </div>
+        {% if curr_peak %}
+        <div class="col-12 mt-3 mb-3" style="text-align: center;">
+        <h2 class="pcaMax"> Максимальное пришедшее значение - {{ curr_peak }} </h2>
+        </div>
+        {% endif %}
+        <div class="col-12 mt-3 mb-3" style="text-align: center;">
+        <h2 class="pcaMax"> Максимальное значение - {{ peak }} - {{ mail }} </h2>
+        </div>
+    </div>
+{% endblock %}

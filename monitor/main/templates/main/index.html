@@ -1,0 +1,44 @@
+{% extends 'main/layout.html' %}
+{% block machine %}
+<form method="post">
+    <div class="row justify-content-center mt-5" >
+        <div class="col-12 mb-3"><h2 style="color:white;">Поиск по дате замеров</h2></div>
+        <div class="col-2">
+            {% csrf_token %}
+            {{ host_form.host }}
+        </div>
+        <div class="col-2">
+            {{ log_form.log_time }}
+        </div>
+        <div class="col-1">
+            <input type="submit" class="btn btn-custom" value="Подтвердить!">
+        </div>
+
+        {% if img_src %}
+        <div class="col-12 mt-5" style="text-align: center;">
+            <img src="/static/main/date_log_img/{{ host }}_{{ date }}_main.png" style="text-align: center;">
+        </div>
+        <div class="col-12"style="text-align: center;">
+            <p class="desc" style="text-align: center;">
+                user - количество процессорного времени, используемое процессами пользовательского
+                пространства <br/>
+                nice - количество процессорного времени, используемое процессами низкого приоритета. <br/>
+                system - количество процессорного времени, используемое ядром. <br/>
+                iowait - количество процессорного времени, потраченное на ожидание операций ввода или
+                вывода. <br/>
+                steal - время ожидания виртуального процессора в виртуальной машине.
+            </p>
+        </div>
+        <div class="col-12" style="text-align: center;">
+            <img src="/static/main/date_log_img/{{ host }}_{{ date }}_pca.png">
+        </div>
+        <div class="col-12 mt-3" style="text-align: center;">
+            {% for el in peak_time %}
+                <p> {{ el }} </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <span>{{ error }}</span>
+    </div>
+</form>
+{% endblock %}

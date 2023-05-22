@@ -1,0 +1,61 @@
+* {
+  color: white;
+}
+body {
+    background-color: #0B5FA5 !important;
+}
+#sidebar {
+    background-color:#3F8FD2;
+    border-right: 2px solid #043C6B;
+    border-radius: 5px;
+}
+#lists {
+    border: 2px solid #043C6B;
+    border-radius: 5px;
+    background-color: #0B5FA5;
+}
+
+#lists:hover {
+    background-color:#25547B;
+}
+a:visited
+{
+    text-decoration: none;
+    decoration: none;
+    color: white;
+}
+
+#hostUl col-12 nav-item a:hover:not(.header) {
+  background-color: #3A3838
+}
+
+#hostFinder:hover {
+  background-color: white;
+}
+
+.btn.btn-custom {
+    background: #3F8FD2;
+    border-color:#0B5FA5;
+    color:white;
+}
+.form-control.form-custom {
+    background-color: #3F8FD2;
+    border-color:#0B5FA5;
+    color:white;
+}
+
+.form-control.form-custom::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.btn.btn-custom:hover {
+  background-color: white;
+}
+
+.form-control.form-custom:hover {
+  background-color: white;
+}
+h1,h2,h3,h4,h5 {
+    text-align: center;
+}
